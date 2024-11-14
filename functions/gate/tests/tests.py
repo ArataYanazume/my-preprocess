@@ -5,14 +5,6 @@ from functions.print_log import log_info
 #----------------------------------------------------------------------#
 # Unittest
 #----------------------------------------------------------------------#
-def setUpModule():
-    """ モジュールテスト開始 """
-    log_info('Test Gate: setUpModule')
-
-def tearDownModule():
-    """ モジュールテスト終了 """
-    log_info('Test Gate: tearDownModule')
-
 class TestGate(TestCase):
     def setUp(self):
         """ ユニットテスト開始 """
