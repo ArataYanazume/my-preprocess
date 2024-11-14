@@ -3,7 +3,7 @@
 """
 import numpy as np
 
-def orGate(x1, x2) -> int:
+def or_gate(x1, x2) -> int:
     """ OR回路 """
     x = np.array([x1, x2])
     w = np.array([0.5, 0.5])
@@ -12,7 +12,7 @@ def orGate(x1, x2) -> int:
         return 0
     return 1
 
-def andGate(x1, x2) -> int:
+def and_gate(x1, x2) -> int:
     """ AND回路 """
     x = np.array([x1, x2])
     w = np.array([0.5, 0.5])
@@ -21,7 +21,7 @@ def andGate(x1, x2) -> int:
         return 0
     return 1
 
-def nandGate(x1, x2) -> int:
+def nand_gate(x1, x2) -> int:
     """ NAND回路 """
     x = np.array([x1, x2])
     w = np.array([-0.5, -0.5])
@@ -30,9 +30,9 @@ def nandGate(x1, x2) -> int:
         return 0
     return 1
 
-def xorGate(x1, x2) -> int:
+def xor_gate(x1, x2) -> int:
     """ XOR回路 """
-    s1 = nandGate(x1, x2)
-    s2 = orGate(x1, x2)
-    y = andGate(s1, s2)
+    s1 = nand_gate(x1, x2)
+    s2 = or_gate(x1, x2)
+    y = and_gate(s1, s2)
     return y
