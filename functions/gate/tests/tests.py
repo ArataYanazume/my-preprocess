@@ -1,11 +1,21 @@
+"""
+モジュールテスト
+"""
 from unittest import TestCase
-from functions.gate import *
+from functions.gate import (
+    or_gate,
+    and_gate,
+    nand_gate,
+    xor_gate
+)
 from functions.print_log import log_info
 
 #----------------------------------------------------------------------#
 # Unittest
 #----------------------------------------------------------------------#
 class TestGate(TestCase):
+    """ ユニットテスト """
+
     def setUp(self):
         """ ユニットテスト開始 """
         log_info('Test Gate: setUp')
