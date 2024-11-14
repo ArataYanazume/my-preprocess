@@ -6,16 +6,20 @@ from functions.print_log import log_info
 # Unittest
 #----------------------------------------------------------------------#
 def setUpModule():
+    """ モジュールテスト開始 """
     log_info('Test Char: setUpModule')
 
 def tearDownModule():
-        log_info('Test Char: tearDownModule')
+    """ モジュールテスト終了 """
+    log_info('Test Char: tearDownModule')
 
 class TestChar(TestCase):
     def setUp(self):
+        """ ユニットテスト開始 """
         log_info('Test Char: setUp')
 
     def tearDown(self):
+        """ ユニットテスト終了 """
         log_info('Test Char: tearDown')
 
     def test_shift1(self):
