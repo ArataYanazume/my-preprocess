@@ -1,5 +1,10 @@
 from unittest import TestCase
-from functions.gate import OR, AND, NAND, XOR
+from functions.gate import (
+    orGate as OR,
+    andGate as AND,
+    nandGate as NAND,
+    xorGate as XOR
+)
 from functions.print_log import log_info
 
 #----------------------------------------------------------------------#
