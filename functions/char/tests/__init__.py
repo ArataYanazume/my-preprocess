@@ -1,4 +1,4 @@
 """"
 init.py
 """
-from .tests import *
+from .test_char import *

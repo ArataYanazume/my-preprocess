@@ -1,0 +1,7 @@
+services:
+  my-preprocess:
+    build:
+      dockerfile: ./Dockerfile
+    tty: true
+    volumes:
+      - ./:/code

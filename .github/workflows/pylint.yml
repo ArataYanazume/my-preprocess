@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.9", "3.10", "3.11"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -21,3 +21,12 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+
+    - name: Build Docker images
+      run: docker compose build
+    - name: Create and Start Docker containers
+      run: docker compose up -d
+    - name: Run Test
+      run: docker compose exec my-preprocess pytest
+    - name: Stop and Remove Docker container
+      run: docker compose down
