@@ -1,6 +1,7 @@
 """
 モジュールテスト
 """
+import inspect
 from unittest import TestCase
 from functions.char import (
     shift,
@@ -38,6 +39,7 @@ class TestChar(TestCase):
         開始位置：指定
         終了位置：指定
         """
+        log_info(inspect.currentframe().f_code.co_name)
         text = 'Hello World'
         self.assertEqual(
             shift(text, 1, 3),
@@ -49,6 +51,7 @@ class TestChar(TestCase):
         開始位置：未指定
         終了位置：指定
         """
+        log_info(inspect.currentframe().f_code.co_name)
         text = 'Hello World'
         self.assertEqual(
             shift(text, 0, 5),
@@ -60,6 +63,7 @@ class TestChar(TestCase):
         開始位置：指定
         終了位置：未指定
         """
+        log_info(inspect.currentframe().f_code.co_name)
         text = 'Hello World'
         self.assertEqual(
             shift(text, 6),
@@ -70,6 +74,7 @@ class TestChar(TestCase):
         """ 終了文字のチェック
         正解
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertTrue(text_if_end_with(
             text='Hello World',
             check='d'
@@ -79,6 +84,7 @@ class TestChar(TestCase):
         """ 終了文字のチェック
         不正解
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertFalse(text_if_end_with(
             text='Hello World',
             check='H'
@@ -88,6 +94,7 @@ class TestChar(TestCase):
         """ 開始文字のチェック
         正解
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertTrue(text_if_start_with(
             text='Hello World',
             check='H'
@@ -97,6 +104,7 @@ class TestChar(TestCase):
         """ 開始文字のチェック
         不正解
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertFalse(text_if_start_with(
             text='Hello World',
             check='d'
@@ -104,6 +112,7 @@ class TestChar(TestCase):
 
     def test_text_join(self):
         """ テキスト結合 """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_join(['Hello', ' ', 'World']),
             'Hello, ,World'
@@ -111,6 +120,7 @@ class TestChar(TestCase):
 
     def test_text_reprace(self):
         """ 置換 """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_reprace(
                 'Herro World',
@@ -124,6 +134,7 @@ class TestChar(TestCase):
         """ テキスト中の文字のチェック
         ある場合
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertTrue(
             text_search(
                 'Hello World',
@@ -134,6 +145,7 @@ class TestChar(TestCase):
         """ テキスト中の文字のチェック
         ない場合
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertFalse(
             text_search(
                 'Hello World',
@@ -144,6 +156,7 @@ class TestChar(TestCase):
         """ 半角スペース/指定文字の除去
         キーワード指定あり
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_strip(
                 text='Hello World',
@@ -156,6 +169,7 @@ class TestChar(TestCase):
         """ 半角スペース/指定文字の除去
         キーワード指定なし
         """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_strip(
                 text='Hello World'
@@ -165,6 +179,7 @@ class TestChar(TestCase):
 
     def test_text_to_list(self):
         """ 文字列のリスト化 """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_to_list('Hello World'),
             (['Hello', 'World'])
@@ -172,6 +187,7 @@ class TestChar(TestCase):
 
     def test_text_upper(self):
         """ 大文字 """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_upper("string"),
             "STRING"
@@ -190,6 +206,7 @@ class TestNumc(TestCase):
 
     def test_text_abs(self):
         """ 絶対値 """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_abs(-4.2),
             '4.2'
@@ -197,6 +214,7 @@ class TestNumc(TestCase):
 
     def test_text_ceil(self):
         """ 小数点切り上げ """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_ceil(5.4),
             '6'
@@ -206,6 +224,7 @@ class TestNumc(TestCase):
         """ 浮動小数点2桁
         元の型：整数(int)
         """
+        log_info(inspect.currentframe().f_code.co_name)
         b = 100
         self.assertEqual(
             text_float(b),
@@ -216,6 +235,7 @@ class TestNumc(TestCase):
         """ 浮動小数点2桁
         元の型：数値(float)
         """
+        log_info(inspect.currentframe().f_code.co_name)
         c = 3.14159
         self.assertEqual(
             text_float(c),
@@ -224,6 +244,7 @@ class TestNumc(TestCase):
 
     def test_text_floor(self):
         """ 小数点切り捨て """
+        log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_floor(4.2),
             '4'

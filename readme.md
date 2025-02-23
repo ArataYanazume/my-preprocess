@@ -3,6 +3,7 @@
 docker compose build
 docker compose up -d
 docker compose exec my-preprocess pytest functions/char/tests/
+ --log-cli-level=DEBUG
 ```
 ### 環境設定の更新
 ```
