@@ -8,4 +8,3 @@ def relu(
     ) -> float:
     """ ReLU関数 """
     return float(np.maximum(0, x))
-

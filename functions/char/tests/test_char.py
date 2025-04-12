@@ -188,4 +188,3 @@ class TestChar(TestCase):
             text_upper("string"),
             "STRING"
         )
-
