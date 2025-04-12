@@ -13,10 +13,6 @@ from functions.char import (
     text_strip,
     text_to_list,
     text_upper,
-    text_abs,
-    text_ceil,
-    text_float,
-    text_floor
 )
 from functions.print_log import log_info
 
@@ -193,59 +189,3 @@ class TestChar(TestCase):
             "STRING"
         )
 
-class TestNumc(TestCase):
-    """ ユニットテスト """
-
-    def setUp(self):
-        """ ユニットテスト開始 """
-        log_info('Test Numc: setUp')
-
-    def tearDown(self):
-        """ ユニットテスト終了 """
-        log_info('Test Numc: tearDown')
-
-    def test_text_abs(self):
-        """ 絶対値 """
-        log_info(inspect.currentframe().f_code.co_name)
-        self.assertEqual(
-            text_abs(-4.2),
-            '4.2'
-        )
-
-    def test_text_ceil(self):
-        """ 小数点切り上げ """
-        log_info(inspect.currentframe().f_code.co_name)
-        self.assertEqual(
-            text_ceil(5.4),
-            '6'
-        )
-
-    def test_text_float1(self):
-        """ 浮動小数点2桁
-        元の型：整数(int)
-        """
-        log_info(inspect.currentframe().f_code.co_name)
-        b = 100
-        self.assertEqual(
-            text_float(b),
-            '100.00'
-        )
-
-    def test_text_float2(self):
-        """ 浮動小数点2桁
-        元の型：数値(float)
-        """
-        log_info(inspect.currentframe().f_code.co_name)
-        c = 3.14159
-        self.assertEqual(
-            text_float(c),
-            '3.14'
-        )
-
-    def test_text_floor(self):
-        """ 小数点切り捨て """
-        log_info(inspect.currentframe().f_code.co_name)
-        self.assertEqual(
-            text_floor(4.2),
-            '4'
-        )

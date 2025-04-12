@@ -1,6 +1,7 @@
 services:
   my-preprocess:
     build:
+      context: .
       dockerfile: ./Dockerfile
     tty: true
     volumes:
