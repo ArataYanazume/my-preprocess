@@ -30,7 +30,7 @@ from functions.char import (
 )
 def test_text_abs(
     param1: float, expected: str
-) -> None:
+    ) -> None:
     """ 絶対値 """
     assert text_abs(param1) == expected
 
@@ -55,7 +55,7 @@ def test_text_abs(
 )
 def test_text_ceil(
     param1: float, expected: str
-) -> None:
+    ) -> None:
     """ 小数点切り上げ """
     assert text_ceil(param1) == expected
 
@@ -79,7 +79,7 @@ def test_text_ceil(
 )
 def test_text_float(
     param1: float, expected: str
-) -> None:
+    ) -> None:
     """ 浮動小数点下2桁のテキストに変換 """
     assert text_float(param1) == expected
 
@@ -104,6 +104,6 @@ def test_text_float(
 )
 def test_text_floor(
     param1: float, expected: str
-) -> None:
+    ) -> None:
     """ 小数点切り捨て """
     assert text_floor(param1) == expected

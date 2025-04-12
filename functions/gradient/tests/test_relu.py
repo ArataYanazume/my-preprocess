@@ -27,6 +27,6 @@ from functions.gradient import (
 )
 def test_relu(
     param1: float, expected: float
-) -> None:
+    ) -> None:
     """ OR回路 """
     assert relu(param1) == expected
