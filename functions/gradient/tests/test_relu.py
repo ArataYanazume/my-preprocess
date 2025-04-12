@@ -1,10 +1,10 @@
 """
 モジュールテスト
 """
+import pytest
 from functions.gradient import (
     relu,
 )
-import pytest
 
 #----------------------------------------------------------------------#
 # Unittest

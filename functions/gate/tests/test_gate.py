@@ -1,13 +1,13 @@
 """
 モジュールテスト
 """
+import pytest
 from functions.gate import (
     or_gate,
     and_gate,
     nand_gate,
     xor_gate
 )
-import pytest
 
 #----------------------------------------------------------------------#
 # Unittest

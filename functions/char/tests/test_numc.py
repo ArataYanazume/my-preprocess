@@ -1,13 +1,13 @@
 """
 モジュールテスト
 """
+import pytest
 from functions.char import (
     text_abs,
     text_ceil,
     text_float,
     text_floor
 )
-import pytest
 
 #----------------------------------------------------------------------#
 # Unittest
