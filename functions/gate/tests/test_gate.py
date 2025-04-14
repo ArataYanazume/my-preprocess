@@ -17,14 +17,25 @@ from functions.gate import (
 @pytest.mark.parametrize(
     "param1,param2,expected",
     [
-        (0, 0, 0),
-        (1, 0, 1),
-        (0, 1, 1),
-        (1, 1, 1),
+        (0.0, -1.0, 0),
+        (0.5, -1.0, 0),
+        (1.0, -1.0, 0),
+        (0.0, -0.5, 0),
+        (0.5, -0.5, 0),
+        (0.0, 0.0, 0),
+        (1.0, -0.5, 1),
+        (0.5, 0.0, 1),
+        (1.0, 0.0, 1),
+        (0.0, 0.5, 1),
+        (0.5, 0.5, 1),
+        (0.0, 1.0, 1),
+        (1.0, 0.5, 1),
+        (0.5, 1.0, 1),
+        (1.0, 1.0, 1),
     ],
 )
 def test_or_gate(
-    param1: int, param2: int, expected: int
+    param1: float, param2: float, expected: int
     ) -> None:
     """ OR回路 """
     assert or_gate(param1, param2) == expected
@@ -37,14 +48,25 @@ def test_or_gate(
 @pytest.mark.parametrize(
     "param1,param2,expected",
     [
-        (0, 0, 0),
-        (1, 0, 0),
-        (0, 1, 0),
-        (1, 1, 1),
+        (0.0, -1.0, 0),
+        (0.5, -1.0, 0),
+        (1.0, -1.0, 0),
+        (0.0, -0.5, 0),
+        (0.5, -0.5, 0),
+        (0.0, 0.0, 0),
+        (1.0, -0.5, 0),
+        (0.5, 0.0, 0),
+        (1.0, 0.0, 0),
+        (0.0, 0.5, 0),
+        (0.5, 0.5, 0),
+        (0.0, 1.0, 0),
+        (1.0, 0.5, 1),
+        (0.5, 1.0, 1),
+        (1.0, 1.0, 1),
     ],
 )
 def test_and_gate(
-    param1: int, param2: int, expected: int
+    param1: float, param2: float, expected: int
     ) -> None:
     """ AND回路 """
     assert and_gate(param1, param2) == expected
@@ -57,14 +79,25 @@ def test_and_gate(
 @pytest.mark.parametrize(
     "param1,param2,expected",
     [
-        (0, 0, 1),
-        (1, 0, 1),
-        (0, 1, 1),
-        (1, 1, 0),
+        (0.0, -1.0, 1),
+        (0.5, -1.0, 1),
+        (1.0, -1.0, 1),
+        (0.0, -0.5, 1),
+        (0.5, -0.5, 1),
+        (0.0, 0.0, 1),
+        (1.0, -0.5, 1),
+        (0.5, 0.0, 1),
+        (1.0, 0.0, 1),
+        (0.0, 0.5, 1),
+        (0.5, 0.5, 1),
+        (0.0, 1.0, 1),
+        (1.0, 0.5, 0),
+        (0.5, 1.0, 0),
+        (1.0, 1.0, 0),
     ],
 )
 def test_nand_gate(
-    param1: int, param2: int, expected: int
+    param1: float, param2: float, expected: int
     ) -> None:
     """ NAND回路 """
     assert nand_gate(param1, param2) == expected
@@ -77,14 +110,25 @@ def test_nand_gate(
 @pytest.mark.parametrize(
     "param1,param2,expected",
     [
-        (0, 0, 0),
-        (1, 0, 1),
-        (0, 1, 1),
-        (1, 1, 0),
+        (0.0, -1.0, 0),
+        (0.5, -1.0, 0),
+        (1.0, -1.0, 0),
+        (0.0, -0.5, 0),
+        (0.5, -0.5, 0),
+        (0.0, 0.0, 0),
+        (1.0, -0.5, 1),
+        (0.5, 0.0, 1),
+        (1.0, 0.0, 1),
+        (0.0, 0.5, 1),
+        (0.5, 0.5, 1),
+        (0.0, 1.0, 1),
+        (1.0, 0.5, 0),
+        (0.5, 1.0, 0),
+        (1.0, 1.0, 0),
     ],
 )
 def test_xor_gate(
-    param1: int, param2: int, expected: int
+    param1: float, param2: float, expected: int
     ) -> None:
     """ XOR回路 """
     assert xor_gate(param1, param2) == expected
