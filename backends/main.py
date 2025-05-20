@@ -21,6 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def func_hello():
+    """ Hello World """
+    return {"message": "Hello World"}
+
 @app.get("/api/xor_gate")
 async def func_xor_gate(a: float, b: float):
     """ XOR回路 """
