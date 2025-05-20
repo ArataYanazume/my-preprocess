@@ -7,7 +7,9 @@ click==8.1.8
 coverage==7.6.10
 fastapi==0.115.12
 fastdiff==0.3.0
-h11==0.14.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
 idna==3.10
 iniconfig==2.0.0
 mypy==1.14.1
