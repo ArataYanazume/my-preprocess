@@ -15,6 +15,11 @@ def test_hello():
         "message": "Hello World"
         }
 
+def test_info():
+    """ Infomation """
+    response = client.get("/api/info")
+    assert response.status_code == 200
+
 def test_xor_gate():
     """ XOR回路 """
     a = 1.0

@@ -1,6 +1,7 @@
 """
 FastAPI Backend
 """
+import platform
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -25,6 +26,11 @@ app.add_middleware(
 async def func_hello():
     """ Hello World """
     return {"message": "Hello World"}
+
+@app.get("/api/info")
+async def func_info():
+    """ プラットフォーム情報を取得 """
+    return {"message": platform.machine()}
 
 @app.get("/api/xor_gate")
 async def func_xor_gate(a: float, b: float):

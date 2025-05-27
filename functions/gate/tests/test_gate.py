@@ -35,7 +35,9 @@ from functions.gate import (
     ],
 )
 def test_or_gate(
-    param1: float, param2: float, expected: int
+        param1: float,
+        param2: float,
+        expected: int
     ) -> None:
     """ OR回路 """
     assert or_gate(param1, param2) == expected
@@ -66,7 +68,9 @@ def test_or_gate(
     ],
 )
 def test_and_gate(
-    param1: float, param2: float, expected: int
+        param1: float,
+        param2: float,
+        expected: int
     ) -> None:
     """ AND回路 """
     assert and_gate(param1, param2) == expected
@@ -97,7 +101,9 @@ def test_and_gate(
     ],
 )
 def test_nand_gate(
-    param1: float, param2: float, expected: int
+        param1: float,
+        param2: float,
+        expected: int
     ) -> None:
     """ NAND回路 """
     assert nand_gate(param1, param2) == expected
@@ -128,7 +134,9 @@ def test_nand_gate(
     ],
 )
 def test_xor_gate(
-    param1: float, param2: float, expected: int
+        param1: float,
+        param2: float,
+        expected: int
     ) -> None:
     """ XOR回路 """
     assert xor_gate(param1, param2) == expected
