@@ -29,4 +29,3 @@ def uni_variance(
     ) -> np.ndarray:
     """ 分散(行方向) """
     return np.var(data, axis=1)
-
