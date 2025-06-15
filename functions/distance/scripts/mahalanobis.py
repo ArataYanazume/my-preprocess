@@ -18,4 +18,3 @@ def mahalanobis_distance(
         np.sqrt((x-y).T @ matrix @ (x-y))
         ).round(decimals)
     return distance
-
