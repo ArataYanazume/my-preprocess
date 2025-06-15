@@ -9,7 +9,8 @@ from functions.basic import (
     columns_standard,
     columns_variance,
     covariance_matrix,
-    correlation_matrix
+    correlation_matrix,
+    normalization,
 )
 
 #----------------------------------------------------------------------#
@@ -21,8 +22,8 @@ from functions.basic import (
     "param1, expected",
     [
         (
-            np.array([[1,2,3],[4,5,6],[7,8,9]]),
-            np.array([4,5,6])
+            np.array([[ 1, 2, 3],[ 4, 5, 6],[ 7, 8, 9]]),
+            np.array([ 4, 5, 6])
         ),
     ],
 )
@@ -43,8 +44,8 @@ def test_columns_mean(
     "param1, expected",
     [
         (
-            np.array([[1,2,3],[4,5,6],[7,8,9]]),
-            np.array([4,5,6])
+            np.array([[ 1, 2, 3],[ 4, 5, 6],[ 7, 8, 9]]),
+            np.array([ 4, 5, 6])
         )
     ],
 )
@@ -59,14 +60,14 @@ def test_columns_median(
 #----------------------------------------------------------------------#
 # Unittest
 #----------------------------------------------------------------------#
-# 標準偏差(列方向)
+# 不偏標準偏差(列方向)
 #----------------------------------------------------------------------#
 @pytest.mark.parametrize(
     "param1, expected",
     [
         (
-            np.array([[1,2,3],[4,5,6],[7,8,9]]),
-            np.array([2.449,2.449,2.449])
+            np.array([[ 1, 2, 3],[ 4, 5, 6],[ 7, 8, 9]]),
+            np.array([ 3, 3, 3])
         ),
     ],
 )
@@ -74,21 +75,21 @@ def test_columns_standard(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 標準偏差(列方向) """
+    """ 不偏標準偏差(列方向) """
     data = columns_standard(param1)
     assert (data.round(3) == expected).all()
 
 #----------------------------------------------------------------------#
 # Unittest
 #----------------------------------------------------------------------#
-# 分散(列方向)
+# 不偏分散(列方向)
 #----------------------------------------------------------------------#
 @pytest.mark.parametrize(
     "param1, expected",
     [
         (
-            np.array([[1,2,3],[4,5,6],[7,8,9]]),
-            np.array([6,6,6])
+            np.array([[ 1, 2, 3],[ 4, 5, 6],[ 7, 8, 9]]),
+            np.array([ 9, 9, 9])
         )
     ],
 )
@@ -96,7 +97,7 @@ def test_columns_variance(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 分散(列方向) """
+    """ 不偏分散(列方向) """
     data = columns_variance(param1)
     assert (data.round(3) == expected).all()
 
@@ -147,3 +148,25 @@ def test_correlation_matrix(
     """ 相関行列 """
     data = correlation_matrix(param1)
     assert (data == expected).all()
+
+#----------------------------------------------------------------------#
+# Unittest
+#----------------------------------------------------------------------#
+# 標準化
+#----------------------------------------------------------------------#
+@pytest.mark.parametrize(
+    "param1, expected",
+    [
+        (
+            np.array([[ 1, 2, 3],[ 4, 5, 6],[ 7, 8, 9]]),
+            np.array([[-1,-1,-1],[ 0, 0, 0],[ 1, 1, 1]])
+        )
+    ],
+)
+def test_normalization(
+        param1: np.ndarray,
+        expected: np.ndarray
+    ) -> None:
+    """ 標準化 """
+    data = normalization(param1)
+    assert (data.round(3) == expected).all()

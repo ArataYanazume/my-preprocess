@@ -21,21 +21,21 @@ def columns_median(
 def columns_standard(
         data: np.ndarray
     ) -> np.ndarray:
-    """ 標準偏差(列方向) """
-    return np.std(data, axis=0)
+    """ 不偏標準偏差(列方向) """
+    return np.std(data, axis=0, ddof=1)
 
 def columns_variance(
         data: np.ndarray
     ) -> np.ndarray:
-    """ 分散(列方向) """
-    return np.var(data, axis=0)
+    """ 不偏分散(列方向) """
+    return np.var(data, axis=0, ddof=1)
 
 def covariance_matrix(
         data: np.ndarray
     ) -> np.ndarray:
     """ 分散共分散行列
-    - numpy行列
-    - バイアスあり（n-1）
+    - numpy行列: rowvar=Flase
+    - バイアス n-1: ddof=1
     """
     covariance = np.cov(data, rowvar=False, ddof=1)
     return covariance
@@ -45,7 +45,17 @@ def correlation_matrix(
     ) -> np.ndarray:
     """ 相関行列
     - numpy行列
-    - バイアスあり（n-1）
+    - バイアス n-1
     """
     corrcoef = np.corrcoef(data)
     return corrcoef
+
+def normalization(
+        data: np.ndarray
+    ) -> np.ndarray:
+    """ 標準化 """
+    normalized = (
+        (data - columns_mean(data))
+            /columns_standard(data)
+        )
+    return normalized
