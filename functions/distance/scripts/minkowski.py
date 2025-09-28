@@ -11,7 +11,9 @@ def euclidean_distance(
         y: np.ndarray,
         decimals: int=1
     ) -> np.ndarray:
-    """ ユークリッド距離 """
+    """
+    ユークリッド距離
+    """
     distance = (
         np.sqrt(np.sum((x-y)**2))
         ).round(decimals)
@@ -22,7 +24,8 @@ def manhattan_distance(
         y: np.ndarray,
         decimals: int=1
     ) -> np.ndarray:
-    """ マンハッタン距離 """
+    """
+    マンハッタン距離 """
     distance = (
         np.sum(abs(x-y))
         ).round(decimals)

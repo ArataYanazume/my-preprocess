@@ -26,7 +26,9 @@ def test_basic_beta(
         param2: int,
         expected: float
     ) -> None:
-    """ ベータ関数 """
+    """
+    ベータ関数
+    """
     assert basic_beta(param1, param2) == expected
 
 #----------------------------------------------------------------------#
@@ -44,7 +46,9 @@ def test_basic_beta_class(
         param1: int,
         param2: int
     ) -> None:
-    """ ベータ関数（クラス） """
+    """
+    ベータ関数（クラス）
+    """
     test_beta = BasicBeta(param1, param2)
     assert test_beta() == basic_beta(param1, param2)
     assert test_beta.exp() == beta_exp(param1, param2)
@@ -66,7 +70,9 @@ def test_beta_exp(
         param2: int,
         expected: float
     ) -> None:
-    """ ベータ分布の期待値 """
+    """
+    ベータ分布の期待値
+    """
     assert beta_exp(param1, param2) == expected
 
 #----------------------------------------------------------------------#
@@ -85,7 +91,9 @@ def test_beta_variance(
         param2: int,
         expected: float
     ) -> None:
-    """ ベータ分布の分散 """
+    """
+    ベータ分布の分散
+    """
     assert beta_variance(param1, param2) == expected
 
 #----------------------------------------------------------------------#
@@ -104,5 +112,7 @@ def test_beta_mode(
         param2: int,
         expected: float
     ) -> None:
-    """ ベータ分布のモード """
+    """
+    ベータ分布のモード
+    """
     assert beta_mode(param1, param2) == expected

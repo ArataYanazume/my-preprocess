@@ -12,7 +12,9 @@ def mahalanobis_distance(
         sigma: np.ndarray,
         decimals: int=1
     ) -> np.ndarray:
-    """ マハラノビス距離 """
+    """
+    マハラノビス距離
+    """
     matrix = np.linalg.inv(sigma)
     distance = (
         np.sqrt((x-y).T @ matrix @ (x-y))

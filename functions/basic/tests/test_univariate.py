@@ -28,7 +28,9 @@ def test_uni_mean(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 平均(行方向) """
+    """
+    平均(行方向)
+    """
     data = uni_mean(param1)
     assert (data == expected).all()
 
@@ -50,7 +52,9 @@ def test_uni_median(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 中央値(行方向) """
+    """
+    中央値(行方向)
+    """
     data = uni_median(param1)
     assert (data == expected).all()
 
@@ -72,7 +76,9 @@ def test_uni_standard(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 標準偏差(行方向) """
+    """
+    標準偏差(行方向)
+    """
     data = uni_standard(param1)
     assert (data.round(3) == expected).all()
 
@@ -94,6 +100,8 @@ def test_uni_variance(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 分散(行方向) """
+    """
+    分散(行方向)
+    """
     data = uni_variance(param1)
     assert (data.round(3) == expected).all()

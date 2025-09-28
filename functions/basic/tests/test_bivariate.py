@@ -31,7 +31,9 @@ def test_columns_mean(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 平均(列方向) """
+    """
+    平均(列方向)
+    """
     data = columns_mean(param1)
     assert (data == expected).all()
 
@@ -53,7 +55,9 @@ def test_columns_median(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 中央値(列方向) """
+    """
+    中央値(列方向)
+    """
     data = columns_median(param1)
     assert (data == expected).all()
 
@@ -75,7 +79,9 @@ def test_columns_standard(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 不偏標準偏差(列方向) """
+    """
+    不偏標準偏差(列方向)
+    """
     data = columns_standard(param1)
     assert (data.round(3) == expected).all()
 
@@ -97,7 +103,9 @@ def test_columns_variance(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 不偏分散(列方向) """
+    """
+    不偏分散(列方向)
+    """
     data = columns_variance(param1)
     assert (data.round(3) == expected).all()
 
@@ -123,7 +131,9 @@ def test_covariance_matrix(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 分散共分散行列 """
+    """
+    分散共分散行列
+    """
     data = covariance_matrix(param1)
     assert (data == expected).all()
 
@@ -145,7 +155,9 @@ def test_correlation_matrix(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 相関行列 """
+    """
+    相関行列
+    """
     data = correlation_matrix(param1)
     assert (data == expected).all()
 
@@ -167,6 +179,8 @@ def test_normalization(
         param1: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ 標準化 """
+    """
+    標準化
+    """
     data = normalization(param1)
     assert (data.round(3) == expected).all()

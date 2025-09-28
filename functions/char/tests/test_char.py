@@ -8,7 +8,7 @@ from functions.char import (
     text_if_end_with,
     text_if_start_with,
     text_join,
-    text_reprace,
+    text_replace,
     text_search,
     text_strip,
     text_to_list,
@@ -20,18 +20,25 @@ from functions.print_log import log_info
 # Unittest
 #----------------------------------------------------------------------#
 class TestChar(TestCase):
-    """ ユニットテスト """
+    """
+    ユニットテスト
+    """
 
     def setUp(self):
-        """ ユニットテスト開始 """
+        """
+        ユニットテスト開始
+        """
         log_info('Test Char: setUp')
 
     def tearDown(self):
-        """ ユニットテスト終了 """
+        """
+        ユニットテスト終了
+        """
         log_info('Test Char: tearDown')
 
     def test_shift1(self):
-        """ 文字シフト
+        """
+        文字シフト
         開始位置：指定
         終了位置：指定
         """
@@ -43,7 +50,8 @@ class TestChar(TestCase):
         )
 
     def test_shift2(self):
-        """ 文字シフト
+        """
+        文字シフト
         開始位置：未指定
         終了位置：指定
         """
@@ -55,7 +63,8 @@ class TestChar(TestCase):
         )
 
     def test_shift3(self):
-        """ 文字シフト
+        """
+        文字シフト
         開始位置：指定
         終了位置：未指定
         """
@@ -67,7 +76,8 @@ class TestChar(TestCase):
         )
 
     def test_text_if_end_with1(self):
-        """ 終了文字のチェック
+        """
+        終了文字のチェック
         正解
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -77,7 +87,8 @@ class TestChar(TestCase):
         ))
 
     def test_text_if_end_with2(self):
-        """ 終了文字のチェック
+        """
+        終了文字のチェック
         不正解
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -87,7 +98,8 @@ class TestChar(TestCase):
         ))
 
     def test_text_if_start_with1(self):
-        """ 開始文字のチェック
+        """
+        開始文字のチェック
         正解
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -97,7 +109,8 @@ class TestChar(TestCase):
         ))
 
     def test_text_if_start_with2(self):
-        """ 開始文字のチェック
+        """
+        開始文字のチェック
         不正解
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -107,18 +120,22 @@ class TestChar(TestCase):
         ))
 
     def test_text_join(self):
-        """ テキスト結合 """
+        """
+        テキスト結合
+        """
         log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_join(['Hello', ' ', 'World']),
             'Hello, ,World'
         )
 
-    def test_text_reprace(self):
-        """ 置換 """
+    def test_text_replace(self):
+        """
+        置換
+        """
         log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
-            text_reprace(
+            text_replace(
                 'Herro World',
                 'r',
                 'l'
@@ -127,7 +144,8 @@ class TestChar(TestCase):
         )
 
     def test_text_search1(self):
-        """ テキスト中の文字のチェック
+        """
+        テキスト中の文字のチェック
         ある場合
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -138,7 +156,8 @@ class TestChar(TestCase):
         ))
 
     def test_text_search2(self):
-        """ テキスト中の文字のチェック
+        """
+        テキスト中の文字のチェック
         ない場合
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -149,7 +168,8 @@ class TestChar(TestCase):
         ))
 
     def test_text_strip1(self):
-        """ 半角スペース/指定文字の除去
+        """
+        半角スペース/指定文字の除去
         キーワード指定あり
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -162,7 +182,8 @@ class TestChar(TestCase):
         )
 
     def test_text_strip2(self):
-        """ 半角スペース/指定文字の除去
+        """
+        半角スペース/指定文字の除去
         キーワード指定なし
         """
         log_info(inspect.currentframe().f_code.co_name)
@@ -174,7 +195,9 @@ class TestChar(TestCase):
         )
 
     def test_text_to_list(self):
-        """ 文字列のリスト化 """
+        """
+        文字列のリスト化
+        """
         log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_to_list('Hello World'),
@@ -182,7 +205,9 @@ class TestChar(TestCase):
         )
 
     def test_text_upper(self):
-        """ 大文字 """
+        """
+        大文字
+        """
         log_info(inspect.currentframe().f_code.co_name)
         self.assertEqual(
             text_upper("string"),
