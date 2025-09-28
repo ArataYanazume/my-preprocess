@@ -29,6 +29,8 @@ def test_mahalanobis_distance(
         param3: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ マハラノビス距離 """
+    """
+    マハラノビス距離
+    """
     data = mahalanobis_distance(param1, param2, param3, decimals=3)
     assert (data == expected).all()

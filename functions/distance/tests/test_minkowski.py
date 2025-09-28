@@ -33,7 +33,9 @@ def test_euclidean_distance(
         param2: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ ユークリッド距離 """
+    """
+    ユークリッド距離
+    """
     data = euclidean_distance(param1, param2, decimals=3)
     assert (data == expected).all()
 
@@ -62,6 +64,8 @@ def test_manhattan_distance(
         param2: np.ndarray,
         expected: np.ndarray
     ) -> None:
-    """ マンハッタン距離 """
+    """
+    マンハッタン距離
+    """
     data = manhattan_distance(param1, param2, decimals=3)
     assert (data == expected).all()
