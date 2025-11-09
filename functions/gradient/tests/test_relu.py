@@ -102,4 +102,3 @@ def test_leaky_relu(
     ) -> None:
     """ Leaky ReLU関数 """
     assert (leaky_relu(param1, alpha) == expected).all()
-
